@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <title>Register</title>
+    <link rel="shortcut icon" href="job logo.png">
+    <link rel="stylesheet" href="Wt2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="split">
+            <div class="left">
+                <form onsubmit="return Validate()" method="POST" action="WT.html">
+                    <div class="rows">
+                        <div class="group">
+                            <label for="fname">Name:</label>
+                            <input type="text" id="fname" name="name" required>
+                        </div>
+                        <div class="group">
+                            <label for="uname">UserName:</label>
+                            <input type="text" id="uname" name="uname" required>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div class='group'>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" required>
+                        </div>
+                        <div class="group">
+                            <label for="gen">Gender:</label>
+                            <input list="gender" id="gen" placeholder="Gender" name="gender" required> 
+                            <datalist id="gender">
+                                <option value="Male">
+                                <option value="Female">
+                                <option value="Others">
+                            </datalist> 
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div class='group'>
+                            <label for="phone">Contact number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0123456789" required>
+                        </div>
+                        <div class="group">
+                            <label for="position">Interested:</label>
+                            <input list="posi" id="position" placeholder="Select" name="position" required> 
+                            <datalist id="posi">
+                                <option value="HR">
+                                <option value="Manager">
+                                <option value="Project Lead">
+                                <option value="Team Member">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div class="group">
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password" pattern=".{8,}" placeholder="minimum 8 characters" required>
+                        </div>
+                        <div class="group">
+                            <label for="confirm_password">Confirm Password:</label><br>
+                            <input type="password" id="confirm_password" name="confirm_password" pattern=".{8,}" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Register" />
+                    <input type="reset">
+                </form>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <script>
+        function Validate()
+        {
+            var user = document.getElementById("uname").value;
+            var no = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("password").value;
+            var cpass = document.getElementById("confirm_password").value;
+            var gen = document.getElementById("gen").value;
+            var nam = document.getElementById("fname").value;
+
+            if(user==null|| user=="" ){
+			alert("Username cannot be blank");
+			return false;
+		    }
+            if( (user.length <= 2) || (user.length > 20)  ) {
+
+                    alert("Username lenght must be between 2 and 20");
+                    return false;	
+            }
+             if(!isNaN(user)){
+                    alert("only characters are allowed");
+                    return false;
+            }
+
+                var num4= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(email.match(num4))
+                {
+                }
+                else
+                {
+                alert("Please enter a correct email");
+                return false;
+                }
+                var num1=/^\d{10}$/;
+                if(no.match(num1))
+                {}
+                else
+                {
+                    alert("Not a valid phone number");
+                    return false;
+                }
+                var num6=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+                if (pass.match(num6)){}
+                else
+                {
+                alert("make sure the password must be with minimum 8characters atleast with 1 capital alphabet 1 small alphabet 1 digit and 1 special character");
+                return false;
+                }
+                if(pass!=cpass){
+                    alert("Password does not match");
+                    return false;
+                }
+                sessionStorage.setItem("uname",user);
+                sessionStorage.setItem("pass",cpass);
+                sessionStorage.setItem("mno",no);
+                sessionStorage.setItem("umail",email);
+                sessionStorage.setItem("name",nam);
+                sessionStorage.setItem("gend",gen);
+                return true;
+		}
+        
+    </script>
+</body>

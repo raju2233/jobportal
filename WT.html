@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>
+Login
+</title>
+<link rel="shortcut icon" href="job logo.png">
+<link rel="stylesheet" href="WT.css">
+</head>
+<body>
+<div class="form-box">
+<div class="button-box">
+<div id="bton"> </div>
+<h1>LOGIN</h1>
+</div>
+<form id="login" class="input-group" method="POST" onsubmit="return validate()" action="profile.html">
+    <input type="text" class="input-field" id="user" placeholder="User Id"required>
+	<input type="password" class="input-field" id="data" placeholder="Password"required>
+  	<input type="checkbox" class="checkbox"><span>Remember Password</span>
+	<button type="submit"class="submit-bton" value="Login">Login</button>
+	
+</form>
+</div>
+<script>
+    var usname = document.getElementById("user").value;
+    var upass = document.getElementById("data").value;
+    function validate()
+    {
+        if(sessionStorage.getItem(uname)===usname){
+        
+            if(sessionStorage.getItem(pass)===upass){
+                return true
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            alert("invalid username or password");
+            return false;
+        }
+    }
+ </script>
+</body>
+</html>

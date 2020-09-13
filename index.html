@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Job</title>
+	<link rel="shortcut icon" href="job logo.png">
+	<link rel="stylesheet" type="text/css" href="job.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="slider()">
+	<div>
+		<div class="slider">
+			<img src="images/1p.jpg" id="slideimg">
+		</div>
+		<div class="overlay">
+			<div class="content">
+				<h1>Find the carrer you deserve</h1>
+				<h3>  Your job search starts and ends with us</h3>
+				<button onclick=regs()> Get Started </button>&nbsp;
+				<img src="job logo1.png" id='img1' onclick=regs()>
+			</div>
+		</div>	
+	</div>
+	<script>
+		var slideimg = document.getElementById("slideimg");
+		var images=new Array(
+					"job.jpg",
+					"job2.jpg",
+					"job3.jpg");
+		var len=images.length;
+		var i=0;
+		function slider()
+		{
+			if(i> len-1){
+				i=0;
+		    }
+		    slideimg.src=images[i];
+			i++;
+			setTimeout('slider()',3000);
+		}
+		function regs()
+		{
+			location.href= "Wt2.html";
+		}
+	</script>
+</body>
+</html>

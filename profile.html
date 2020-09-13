@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>
+	Profile
+	</title>
+	<link rel="shortcut icon" href="job logo.png">
+	<link rel="stylesheet" href="profile.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="profile">
+		<div class="image-cont">
+			<img src="profile2.jpg"style="width:100%">
+			<div class="title">
+			</div>
+		</div>
+			<div class="main">
+				<p><i class="fa fa-briefcase info"></i>Name:<lable id="name"></lable></label></p>
+				<p><i class="fa fa-briefcase info"></i>Username:<label id="uname"></lableid></lable></p>
+				<p><i class="fa fa-envelope info"></i>Mail:<label id="mail"></lableid></lable></p>
+				<p><i class="fa fa-venus-mars info"></i>Gender:<label id="gen"></p>
+                <p><i class="fa fa-phone info"></i>Contact:<lable id="mobile"></lable></p>
+			  <hr>
+				<div>
+					<a href="Admit Card.pdf" download><button class="but">Hallticket Download</button></a>
+				</div>			  
+			</div>
+	</div>
+	<button id="btn" onclick=regs()>Logout</button>
+				
+    <script>
+        document.getElementById("name").innerHTML=sessionStorage.getItem("name");
+        document.getElementById("uname").innerHTML=sessionStorage.getItem("uname");
+        document.getElementById("mail").innerHTML=sessionStorage.getItem("umail");
+        document.getElementById("mobile").innerHTML=sessionStorage.getItem("mno");
+		document.getElementById("gen").innerHTML=sessionStorage.getItem("gend");
+		function regs()
+		{
+			location.href= "index.html";
+		}
+    </script>
+
+</body>
+</html>

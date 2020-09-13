@@ -1,0 +1,103 @@
+.split{
+    display: flex;
+
+}
+body{
+    background-color:#f1c40f
+}
+.container{
+    width:80%;
+    margin:100px auto;
+}
+
+.left{
+   flex-basis: 60%;
+   padding: 40px 60px;
+   background: #fff;
+}
+
+.right{
+    flex-basis: 40%;
+    padding: 40px ;
+    background: #0ba1e7;
+    background-image: url(job5.jpg);
+ }
+
+ .form-box
+{
+	
+	width:1200px;
+	height:520px;
+	position:relative;
+	margin:6% auto;
+	background:#fff;
+	padding:5px;
+	border-radius:30px;
+	overflow:hidden;
+	box-shadow:0 2px 4px rgba(0,0,0,0.6);
+	
+}
+
+.rows{
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rows .group{
+    flex-basis: 45%;
+}
+
+input{
+    width: 100%;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+label{
+    margin-left: 4px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input[type="submit"]{
+    background:#000;
+	width:150px;
+	border:1px solid #000;
+	outline:none;
+	color:#fff;
+	cursor:pointer;
+	height:35px;
+	border-radius:30px;
+    margin-top:15px;
+    margin-left:130px;
+	box-shadow:0px 5px 15px 0px rgba(28,0,181,0.5);
+}
+input[type="submit"]:hover
+{
+	background:transparent;
+	color:#000;
+	
+}
+
+input[type="reset"]
+{ 
+    background: #000; 
+    width:150px;
+    border:1px solid #000; 
+    color:#fff;
+    cursor: pointer; 
+    height:35px;
+	border-radius:30px;
+    margin-top:15px;
+    margin-left:30px;
+	box-shadow:0px 5px 15px 0px rgba(28,0,181,0.5);
+}
+input[type="reset"]:hover
+{ 
+    background:transparent;
+    color:#000;
+}
+
